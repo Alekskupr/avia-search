@@ -1,8 +1,8 @@
-const selectLocation = (loc) => {
+const selectSortAC = (radio) => {
   return {
-    type: 'SELECT_LOCATION',
-    payload: loc,
+    type: 'SELECT_SORT',
+    payload: radio,
   };
 };
 
-export { selectLocation };
+export { selectSortAC };

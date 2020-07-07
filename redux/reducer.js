@@ -1,15 +1,16 @@
 const inintialState = {
-  selectedLocation: '',
+  selectSort: '',
 };
 
 export default function (state = inintialState, action) {
   switch (action.type) {
-    case 'SELECT_LOCATION': {
+    case 'SELECT_SORT': {
       return {
         ...state,
-        selectedLocation: action.payload,
-      }
+        selectSort: action.payload,
+      };
     }
-    default: return state;
+    default:
+      return state;
   }
 }

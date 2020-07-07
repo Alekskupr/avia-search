@@ -2,7 +2,7 @@ import React from 'react';
 import './card.css';
 
 const Card = (props) => {
-  console.log(props);
+  // console.log(props);
   // <div>{item.flight.legs[0].segments[0].departureCity.caption}</div>;
 
   const { flight } = props;
@@ -18,7 +18,7 @@ const Card = (props) => {
       },
     ],
   } = flight;
-  console.log(segments);
+  // console.log(segments);
   
   const transferDuration = dur => {
     const durationStr = `${Math.floor(duration / 60)} ч ${duration % 60} мин`;
