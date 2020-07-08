@@ -2,9 +2,6 @@ import React from 'react';
 import './card.css';
 
 const Card = (props) => {
-  // console.log(props);
-  // <div>{item.flight.legs[0].segments[0].departureCity.caption}</div>;
-
   const { flight } = props;
   const {
     carrier: { caption: carrierName },
@@ -18,9 +15,8 @@ const Card = (props) => {
       },
     ],
   } = flight;
-  // console.log(segments);
   
-  const transferDuration = dur => {
+  const transferDuration = () => {
     const durationStr = `${Math.floor(duration / 60)} ч ${duration % 60} мин`;
     return durationStr;
   }
@@ -60,8 +56,6 @@ const Card = (props) => {
   const departureDate = transferdepartureDate(segments[0].departureDate);
   const arrivalDate = transferdepartureDate(segments[segments.length - 1].arrivalDate);
   
-  
-
   return (
     <div className="containerCard">
       <div className="carrieLogo">Логотип перевозчика</div>

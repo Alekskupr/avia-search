@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './app.css';
 import dataFlights from '../flights.json';
 import ListFlights from '../listFlight/listFlight';
@@ -13,39 +13,27 @@ const App = () => {
     return store.selectSort;
   });
 
-
   useEffect(() => {
-
-    const newArr = 
-      selectSort.checkbox
-        ? flightsForList.filter((item) => item.flight.legs[0].segments.length === 1)
-        : flightsForList.filter((item) => item.flight.legs[0].segments.length > 0)
-
-      
-    const newnewArr = newArr.filter(
+    const filteredSortedList = (selectSort.checkbox
+      ? flightsForList.filter((item) => item.flight.legs[0].segments.length === 1)
+      : flightsForList.filter((item) => item.flight.legs[0].segments.length > 0)
+    ).filter(
       (item) =>
-        +item.flight.price.total.amount > selectSort.priceMin &&
-        +item.flight.price.total.amount < selectSort.priceMax,
+        +item.flight.price.total.amount > selectSort.priceMin && +item.flight.price.total.amount < selectSort.priceMax,
     );
-
-
     if (selectSort.radioValue === 'priceHigh') {
-      newnewArr.sort((a, b) => +a.flight.price.total.amount - +b.flight.price.total.amount);
+      filteredSortedList.sort((a, b) => +a.flight.price.total.amount - +b.flight.price.total.amount);
     } else {
-      if(selectSort.radioValue === 'priceLow') {
-        newnewArr.sort((a, b) => +b.flight.price.total.amount - +a.flight.price.total.amount);
+      if (selectSort.radioValue === 'priceLow') {
+        filteredSortedList.sort((a, b) => +b.flight.price.total.amount - +a.flight.price.total.amount);
       } else {
-        if(selectSort.radioValue === 'duration') {
-          newnewArr.sort((a, b) => +a.flight.legs[0].duration - +b.flight.legs[0].duration);
+        if (selectSort.radioValue === 'duration') {
+          filteredSortedList.sort((a, b) => +a.flight.legs[0].duration - +b.flight.legs[0].duration);
         }
       }
     }
-
-    setList([...newnewArr]);
-   
+    setList([...filteredSortedList]);
   }, [selectSort]);
-
-
 
   return (
     <div className="mainContainer">

@@ -3,9 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { filterPanelOptionsAC } from '../../redux/action';
 
 const FilterPanel = () => {
-  // const [radioValue, setRadioValue] = useState('');
-  // const [checked, setChecked] = useState(false);
-
   const [filterPanelOptions, setFilterPanelOptions] = useState({
     radioValue: '',
     checkbox: false,
