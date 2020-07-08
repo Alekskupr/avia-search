@@ -1,4 +1,50 @@
 .containerCard {
-  background-color: white;
   border: 1px solid black;
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+    background-color: white;
+}
+
+.headerCard {
+  background-color: blue;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pricePanel {
+  display: flex;
+  flex-direction: column;
+  text-align: right; 
+}
+
+/* .priceSpan {
+  text-align: right; 
+} */
+
+.routePanel {
+  /* display: flex;
+  
+  border-bottom: 1px solid grey; */
+  padding: 5px;
+}
+
+.innerRoutePanel {
+  border-bottom: 1px solid grey;
+  display: flex;
+}
+
+.datePanel {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+}
+
+.carrierName {
+  border: 1px solid black;
+}
+
+.selectButton {
+  background-color: red;
 }

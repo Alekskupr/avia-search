@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterPanelOptionsAC } from '../../redux/action';
+import './filterPanel.css';
 
 const FilterPanel = () => {
   const [filterPanelOptions, setFilterPanelOptions] = useState({
@@ -51,32 +52,32 @@ const FilterPanel = () => {
   const inputRadioCollection = ['priceHigh', 'priceLow', 'duration'];
 
   return (
-    <div>
-      <p>
-        <b>Сортировать</b>
-      </p>
-      <div>
-        {inputRadioCollection.map((item, index) => {
-          return (
-            <input
-              name="selectSort"
-              type="radio"
-              value={item}
-              key={index}
-              onChange={radioHandler}
-              checked={item === filterPanelOptions.radioValue}
-            />
-          );
-        })}
+    <div className="filterPanel">
+        <p>
+          <b>Сортировать</b>
+        </p>
+        <div>
+          {inputRadioCollection.map((item, index) => {
+            return (
+              <input
+                name="selectSort"
+                type="radio"
+                value={item}
+                key={index}
+                onChange={radioHandler}
+                checked={item === filterPanelOptions.radioValue}
+              />
+            );
+          })}
+        </div>
+        <div>
+          <input type="checkbox" value={filterPanelOptions.checkbox} onChange={checkboxHandler} />
+        </div>
+        <div>
+          <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMin} onChange={priceMinHandler} />
+          <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMax} onChange={priceMaxHandler} />
+        </div>
       </div>
-      <div>
-        <input type="checkbox" value={filterPanelOptions.checkbox} onChange={checkboxHandler} />
-      </div>
-      <div>
-        <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMin} onChange={priceMinHandler} />
-        <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMax} onChange={priceMaxHandler} />
-      </div>
-    </div>
   );
 };
 

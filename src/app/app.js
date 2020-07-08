@@ -37,8 +37,12 @@ const App = () => {
 
   return (
     <div className="mainContainer">
-      <FilterPanel className="filterPanel" />
-      <ListFlights className="tripPanel" list={list} />
+      <div className="filterContainer">
+        <FilterPanel />
+      </div>
+      <div className = "tripContainer">
+        <ListFlights list={list} />
+      </div>
     </div>
   );
 };

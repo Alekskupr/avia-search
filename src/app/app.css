@@ -4,22 +4,23 @@ html,body {
 }
 
 .mainContainer {
-  background-color: burlywood;
-  max-width: 70vw;
+  max-width: 65vw;
   height: 100vh;
   margin: 0 auto;
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 1fr 3fr;
 }
-
-.filterPanel {
+ 
+.filterContainer {
   background-color: yellow;
-  flex-grow: 1;
+  border: 1px solid black;
 }
 
-.tripPanel {
+.tripContainer {
   background-color: green;
-  flex-grow: 10;
+  /* flex-grow: 10; */
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 0 10px;
 }

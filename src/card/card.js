@@ -8,19 +8,14 @@ const Card = (props) => {
     price: {
       total: { amount },
     },
-    legs: [
-      {
-        duration,
-        segments,
-      },
-    ],
+    legs: [{ duration, segments }],
   } = flight;
-  
+
   const transferDuration = () => {
     const durationStr = `${Math.floor(duration / 60)} ч ${duration % 60} мин`;
     return durationStr;
-  }
-  
+  };
+
   const transferdepartureDate = (date) => {
     const newDate = new Date(date);
     const rusMonth = [
@@ -49,41 +44,57 @@ const Card = (props) => {
       dateFlight,
       month,
       day,
-    }
+    };
     return dateObj;
   };
 
   const departureDate = transferdepartureDate(segments[0].departureDate);
   const arrivalDate = transferdepartureDate(segments[segments.length - 1].arrivalDate);
-  
+
   return (
     <div className="containerCard">
-      <div className="carrieLogo">Логотип перевозчика</div>
-      <div className="price">{amount}</div>
-      <div className="cityName">{segments[0].departureCity.caption}</div>
-      <div className="airportName">{segments[0].departureAirport.caption}</div>
-      <div className="airportUid">{segments[0].departureAirport.uid}</div>
-      <div className="cityName">{segments[segments.length - 1].arrivalCity.caption}</div>
-      <div className="airportName">{segments[segments.length - 1].arrivalAirport.caption}</div>
-      <div className="airportUid">{segments[segments.length - 1].arrivalAirport.uid}</div>
-      <div className="departureDate">
-        <span>
-          {departureDate.hours}:{departureDate.minutes}
-        </span>{' '}
-        <span>
-          {departureDate.dateFlight} {departureDate.month} {departureDate.day}
-        </span>
+      <div className="headerCard">
+        <div className="carrieLogo">Логотип перевозчика</div>
+        <div className="pricePanel">
+          <div className="price">
+            <span>{amount}</span>
+          </div>
+          <span>Стоимость для одного взрослого пассажира</span>
+        </div>
       </div>
-      <div className="travelDuration">{transferDuration(duration)}</div>
-      <div className="departureDate">
-        <span>
-          {arrivalDate.dateFlight} {arrivalDate.month} {arrivalDate.day}
-        </span>{' '}
-        <span>
-          {arrivalDate.hours}:{arrivalDate.minutes}
-        </span>
+      <div className="routePanel">
+        <div className="innerRoutePanel">
+          <div className="cityName"><span>{segments[0].departureCity.caption}</span></div>
+          <div className="airportName"><span>{segments[0].departureAirport.caption}</span></div>
+          <div className="airportUid"><span>{segments[0].departureAirport.uid}</span></div>
+          <div className="cityName"><span>{segments[segments.length - 1].arrivalCity.caption}</span></div>
+          <div className="airportName"><span>{segments[segments.length - 1].arrivalAirport.caption}</span></div>
+          <div className="airportUid"><span>{segments[segments.length - 1].arrivalAirport.uid}</span></div>
+        </div>
       </div>
-      <div className="carrieName">Рейс выполняет: {carrierName}</div>
+      <div className="datePanel">
+        <div className="departureDate">
+          <span>
+            {departureDate.hours}:{departureDate.minutes}
+          </span>{' '}
+          <span>
+            {departureDate.dateFlight} {departureDate.month} {departureDate.day}
+          </span>
+        </div>
+        <div className="travelDuration">{transferDuration(duration)}</div>
+        <div className="departureDate">
+          <span>
+            {arrivalDate.dateFlight} {arrivalDate.month} {arrivalDate.day}
+          </span>{' '}
+          <span>
+            {arrivalDate.hours}:{arrivalDate.minutes}
+          </span>
+        </div>
+      </div>
+      <div className="carrierName">Рейс выполняет: {carrierName}</div>
+      <button type="button" className="selectButton">
+        Выбрать
+      </button>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/card';
+import './listFlight.css';
 
 const ListFlight = ({list}) => {
   return (
