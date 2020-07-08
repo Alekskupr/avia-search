@@ -2,13 +2,10 @@ import React from 'react';
 
 import Card from '../card/card';
 
-const ListFlight = (props) => {
-  const { list } = props;
-  console.log(list);
-
+const ListFlight = ({list}) => {
   return (
     <div className="listFlight">
-      {list &&
+      {list.length &&
         list.map((item, index) => {
           return <Card key={index} {...item} />;
         })}

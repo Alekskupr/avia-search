@@ -8,31 +8,44 @@ import FilterPanel from '../filterPanel/filterPanel';
 const App = () => {
   const [flightsForList, setFlightsForList] = useState(dataFlights.result.flights);
   const [list, setList] = useState([]);
-  
 
   const selectSort = useSelector((store) => {
     return store.selectSort;
   });
 
+
   useEffect(() => {
-    
-    if (selectSort === 'priceHigh' || '') {
-      console.log('if priceHigh');
-      setList(flightsForList.sort((a, b) => +a.flight.price.total.amount - +b.flight.price.total.amount));
-      // console.log(newFlightForList);
-    }
-    if (selectSort === 'priceLow') {
-      console.log('if priceLow');
 
-      setList(flightsForList.sort((a, b) => +b.flight.price.total.amount - +a.flight.price.total.amount));
-    }
-    if (selectSort === 'duration') {
-      console.log('if duration');
-      setList(flightsForList.sort((a, b) => +a.flight.legs.duration - +b.flight.legs.duration));
-    }
-  }, [selectSort, flightsForList]);
+    const newArr = 
+      selectSort.checkbox
+        ? flightsForList.filter((item) => item.flight.legs[0].segments.length === 1)
+        : flightsForList.filter((item) => item.flight.legs[0].segments.length > 0)
 
-  // console.log(list.flight.price.total.amount);
+      
+    const newnewArr = newArr.filter(
+      (item) =>
+        +item.flight.price.total.amount > selectSort.priceMin &&
+        +item.flight.price.total.amount < selectSort.priceMax,
+    );
+
+
+    if (selectSort.radioValue === 'priceHigh') {
+      newnewArr.sort((a, b) => +a.flight.price.total.amount - +b.flight.price.total.amount);
+    } else {
+      if(selectSort.radioValue === 'priceLow') {
+        newnewArr.sort((a, b) => +b.flight.price.total.amount - +a.flight.price.total.amount);
+      } else {
+        if(selectSort.radioValue === 'duration') {
+          newnewArr.sort((a, b) => +a.flight.legs[0].duration - +b.flight.legs[0].duration);
+        }
+      }
+    }
+
+    setList([...newnewArr]);
+   
+  }, [selectSort]);
+
+
 
   return (
     <div className="mainContainer">

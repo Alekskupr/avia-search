@@ -1,37 +1,86 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {selectSortAC} from '../../redux/action';
+import { filterPanelOptionsAC } from '../../redux/action';
 
 const FilterPanel = () => {
+  // const [radioValue, setRadioValue] = useState('');
+  // const [checked, setChecked] = useState(false);
 
-  const [radioValue, setRadioValue] = useState('priceHigh');
+  const [filterPanelOptions, setFilterPanelOptions] = useState({
+    radioValue: '',
+    checkbox: false,
+    priceMin: 0,
+    priceMax: 100000,
+  });
 
   const dispatch = useDispatch();
 
   const radioHandler = (e) => {
-    setRadioValue(e.target.value);
-    // dispatch(selectSortAC(e.target.value));
-  }
+    setFilterPanelOptions({
+      ...filterPanelOptions,
+      radioValue: e.target.value,
+    });
+  };
+
+  const checkboxHandler = (e) => {
+    setFilterPanelOptions({
+      ...filterPanelOptions,
+      checkbox: !filterPanelOptions.checkbox,
+    });
+  };
+
+  const priceMinHandler = (e) => {
+    if (e.target.validity.valid) {
+      setFilterPanelOptions({
+        ...filterPanelOptions,
+        priceMin: e.target.value,
+      });
+    }
+  };
+
+  const priceMaxHandler = (e) => {
+    if (e.target.validity.valid) {
+      setFilterPanelOptions({
+        ...filterPanelOptions,
+        priceMax: e.target.value,
+      });
+    }
+  };
 
   useEffect(() => {
-    dispatch(selectSortAC(radioValue));
-  }, [radioValue]);
+    dispatch(filterPanelOptionsAC(filterPanelOptions));
+  }, [filterPanelOptions]);
+
+  const inputRadioCollection = ['priceHigh', 'priceLow', 'duration'];
 
   return (
-    <form>
+    <div>
       <p>
         <b>Сортировать</b>
       </p>
-      <input name="selectSort" type="radio" value="priceHigh" onChange={radioHandler}/>
-      По возрастанию цены
-      <input name="selectSort" type="radio" value="priceLow" onChange={radioHandler} />
-      По убыванию цены
-      <input name="selectSort" type="radio" value="duration" onChange={radioHandler} />
-      по времени в пути
-    </form>
-    // <input type="checkbox"/>
+      <div>
+        {inputRadioCollection.map((item, index) => {
+          return (
+            <input
+              name="selectSort"
+              type="radio"
+              value={item}
+              key={index}
+              onChange={radioHandler}
+              checked={item === filterPanelOptions.radioValue}
+            />
+          );
+        })}
+      </div>
+      <div>
+        <input type="checkbox" value={filterPanelOptions.checkbox} onChange={checkboxHandler} />
+      </div>
+      <div>
+        <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMin} onChange={priceMinHandler} />
+        <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMax} onChange={priceMaxHandler} />
+      </div>
+    </div>
   );
 };
-
 
 export default FilterPanel;

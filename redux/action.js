@@ -1,8 +1,8 @@
-const selectSortAC = (radio) => {
+const filterPanelOptionsAC = (options) => {
   return {
-    type: 'SELECT_SORT',
-    payload: radio,
+    type: 'SELECT_OPTIONS',
+    payload: options,
   };
 };
 
-export { selectSortAC };
+export { filterPanelOptionsAC };
