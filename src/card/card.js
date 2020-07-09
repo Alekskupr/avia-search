@@ -59,17 +59,29 @@ const Card = (props) => {
           <div className="price">
             <span>{amount}</span>
           </div>
-          <span>Стоимость для одного взрослого пассажира</span>
+          <span className="infoPrice">Стоимость для одного взрослого пассажира</span>
         </div>
       </div>
       <div className="routePanel">
         <div className="innerRoutePanel">
-          <div className="cityName"><span>{segments[0].departureCity.caption}</span></div>
-          <div className="airportName"><span>{segments[0].departureAirport.caption}</span></div>
-          <div className="airportUid"><span>{segments[0].departureAirport.uid}</span></div>
-          <div className="cityName"><span>{segments[segments.length - 1].arrivalCity.caption}</span></div>
-          <div className="airportName"><span>{segments[segments.length - 1].arrivalAirport.caption}</span></div>
-          <div className="airportUid"><span>{segments[segments.length - 1].arrivalAirport.uid}</span></div>
+          <div className="cityName">
+            <span>{segments[0].departureCity.caption}</span>
+          </div>
+          <div className="airportName">
+            <span>{segments[0].departureAirport.caption}</span>
+          </div>
+          <div className="airportUid">
+            <span>({segments[0].departureAirport.uid})</span>
+          </div>
+          <div className="cityName">
+            <span>{segments[segments.length - 1].arrivalCity.caption}</span>
+          </div>
+          <div className="airportName">
+            <span>{segments[segments.length - 1].arrivalAirport.caption}</span>
+          </div>
+          <div className="airportUid">
+            <span>({segments[segments.length - 1].arrivalAirport.uid})</span>
+          </div>
         </div>
       </div>
       <div className="datePanel">
@@ -93,7 +105,7 @@ const Card = (props) => {
       </div>
       <div className="carrierName">Рейс выполняет: {carrierName}</div>
       <button type="button" className="selectButton">
-        Выбрать
+        ВЫБРАТЬ
       </button>
     </div>
   );

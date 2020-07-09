@@ -1,50 +1,70 @@
 .containerCard {
-  border: 1px solid black;
-  margin: 20px 10px;
+
+  /* margin: 20px 10px; */
+  width: 635px;
+  height: 224px;
   display: flex;
   flex-direction: column;
-    background-color: white;
+  background-color: white;
+  margin: 18px 0 0 0;
+  color:#263540;
+  border: 1px solid #e6e6e6;
 }
 
 .headerCard {
-  background-color: blue;
+  height: 44px;
+  background-color: #425668;
   padding: 5px 10px;
   display: flex;
   justify-content: space-between;
+  color: white;
+  box-sizing: border-box;
 }
 
 .pricePanel {
   display: flex;
   flex-direction: column;
-  text-align: right; 
+  text-align: right;
+  
 }
 
-/* .priceSpan {
-  text-align: right; 
-} */
+.infoPrice{
+  font-size: 12px;
+}
 
 .routePanel {
-  /* display: flex;
-  
-  border-bottom: 1px solid grey; */
-  padding: 5px;
+  padding: 0 5px;
 }
 
 .innerRoutePanel {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #e6e6e6;
+  height: 41px;
   display: flex;
+  /* margin: 13px auto; */
+  align-items: center;
+  padding: 0 13px;
 }
 
+
 .datePanel {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  /* padding: 10px 20px; */
+  height: auto;
+  flex-grow: 1;
 }
 
 .carrierName {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  height: 35px;
 }
 
 .selectButton {
-  background-color: red;
+  height: 38px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #F61C19;
+  color: #fff;
 }

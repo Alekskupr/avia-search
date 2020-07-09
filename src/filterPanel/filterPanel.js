@@ -49,35 +49,59 @@ const FilterPanel = () => {
     dispatch(filterPanelOptionsAC(filterPanelOptions));
   }, [filterPanelOptions]);
 
-  const inputRadioCollection = ['priceHigh', 'priceLow', 'duration'];
+  const inputRadioCollection = [
+    { sort: 'priceHigh', label: '- по возрастанию цены', id: 'priceHigh', key: 1 },
+    { sort: 'priceLow', label: '- по убыванию цены', id: 'priceLow', key: 2 },
+    { sort: 'duration', label: '- по времени в пути', id: 'duration', key: 3 },
+  ];
 
   return (
-    <div className="filterPanel">
-        <p>
-          <b>Сортировать</b>
-        </p>
+    <div className="filterSortPanel">
+      {/* <div className="inputGroup">
+        <input onChange={inputHandler} id="login" placeholder=" " />
+        <label htmlFor="login">login</label>
+      </div> */}
+
+      <div className="sortPanel">
+
+        <p className="titlePanel">Сортировать</p>
         <div>
-          {inputRadioCollection.map((item, index) => {
+          {inputRadioCollection.map((item) => {
             return (
-              <input
-                name="selectSort"
-                type="radio"
-                value={item}
-                key={index}
-                onChange={radioHandler}
-                checked={item === filterPanelOptions.radioValue}
-              />
+              <div key={item.key} className="radioGroup">
+                <input
+                  name="selectSort"
+                  type="radio"
+                  value={item.sort}
+                  onChange={radioHandler}
+                  checked={item.sort === filterPanelOptions.radioValue}
+                />
+                <label htmlFor={item.id}>{item.label}</label>
+              </div>
             );
           })}
         </div>
+      </div>
+
+      <div className="filterPanel">
+        
+        <p className="titlePanel">Фильтровать</p>
         <div>
-          <input type="checkbox" value={filterPanelOptions.checkbox} onChange={checkboxHandler} />
+          <input type="checkbox" value={filterPanelOptions.checkbox} onChange={checkboxHandler} id="checkbox" />
+          <label htmlFor="checkbox"> - без пересадок</label>
         </div>
-        <div>
+
+        <p className="titlePanel">Цена</p>
+        <div className="inputGroup">
+          <span>От </span>
           <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMin} onChange={priceMinHandler} />
+        </div>
+        <div className="inputGroup">
+          <span>До </span>
           <input type="tel" pattern="^[0-9]+$" value={filterPanelOptions.priceMax} onChange={priceMaxHandler} />
         </div>
       </div>
+    </div>
   );
 };
 

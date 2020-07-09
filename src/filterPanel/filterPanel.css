@@ -1,4 +1,51 @@
+.filterSortPanel {
+  /* border: 1px solid black; */
+  padding: 0 10px;
+  margin: 36px 0;
+  font-size: 13px;
+  width: 100%;
+  height: 323px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  box-sizing: border-box;
+  background-color: white;
+}
+
+.filterSortPanel input {
+  margin: 0;
+  outline: none;
+  background-color: #fff;
+  border: 1px solid #425668;
+  border-radius: 2px;
+}
+
+.sortPanel {
+  display: flex;
+  flex-direction: column;
+  /* margin: 10px 0; */
+}
+.sortPanel p {
+  margin: 20px 0;
+}
+
 .filterPanel {
-  border: 1px solid black;
-  
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.filterPanel * {
+  margin-top: 20px;
+}
+
+.inputGroup input {
+  width: 174px;
+  height: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.titlePanel {
+  font-weight: bold;
 }
