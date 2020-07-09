@@ -2025,6 +2025,197 @@
         "hasExtendedFare": false,
         "flight": {
           "carrier": {
+            "uid": "AF",
+            "caption": "Эйр Франс",
+            "airlineCode": "AF"
+          },
+          "price": {
+            "total": {
+              "amount": "14607",
+              "currency": "руб.",
+              "currencyCode": "RUB"
+            },
+            "totalFeeAndTaxes": {
+              "amount": "3387.00",
+              "currency": "руб.",
+              "currencyCode": "RUB"
+            },
+            "rates": {
+              "totalUsd": {
+                "amount": "201.48",
+                "currency": "Евро",
+                "currencyCode": "EUR"
+              },
+              "totalEur": {
+                "amount": "226.47",
+                "currencyCode": "USD"
+              }
+            },
+            "passengerPrices": [
+              {
+                "total": {
+                  "amount": "14607.00",
+                  "currency": "руб.",
+                  "currencyCode": "RUB"
+                },
+                "passengerType": {
+                  "uid": "ADULT",
+                  "caption": "Взрослый"
+                },
+                "singlePassengerTotal": {
+                  "amount": "14607.00",
+                  "currency": "руб.",
+                  "currencyCode": "RUB"
+                },
+                "passengerCount": 1,
+                "fee": {
+                  "amount": "400.00",
+                  "currency": "руб.",
+                  "currencyCode": "RUB"
+                },
+                "feeDetails": {
+                  "agencyFees": {
+                    "amount": "400.00",
+                    "currency": "руб.",
+                    "currencyCode": "RUB"
+                  },
+                  "supplierFees": {
+                    "amount": "0.00",
+                    "currency": "руб.",
+                    "currencyCode": "RUB"
+                  }
+                },
+                "taxes": {
+                  "amount": "2987.00",
+                  "currency": "руб.",
+                  "currencyCode": "RUB"
+                },
+                "tariff": {
+                  "amount": "11220.00",
+                  "currency": "руб.",
+                  "currencyCode": "RUB"
+                }
+              }
+            ]
+          },
+          "servicesStatuses": {
+            "baggage": {
+              "uid": "OFF",
+              "caption": "Недоступно"
+            },
+            "exchange": {
+              "uid": "FREE",
+              "caption": "Бесплатно"
+            },
+            "refund": {
+              "uid": "OFF",
+              "caption": "Недоступно"
+            }
+          },
+          "legs": [
+            {
+              "duration": 750,
+              "segments": [
+                {
+                  "classOfServiceCode": "T",
+                  "classOfService": {
+                    "uid": "ECONOMY",
+                    "caption": "Эконом"
+                  },
+                  "departureAirport": {
+                    "uid": "SVO",
+                    "caption": "Шереметьево"
+                  },
+                  "departureCity": {
+                    "uid": "MOW",
+                    "caption": "Москва"
+                  },
+                  "aircraft": {
+                    "uid": "321",
+                    "caption": "АЭРОБУС321"
+                  },
+                  "travelDuration": 245,
+                  "arrivalCity": {
+                    "uid": "PAR",
+                    "caption": "Париж"
+                  },
+                  "arrivalDate": "2020-07-10T09:00:00",
+                  "flightNumber": "1655",
+                  "techStopInfos": [],
+                  "departureDate": "2020-07-10T05:55:00",
+                  "stops": 0,
+                  "servicesDetails": {
+                    "freeCabinLuggage": {},
+                    "paidCabinLuggage": {},
+                    "tariffName": "ECONOMY LIGHT2",
+                    "fareBasis": {
+                      "ADULT": "TS50BBLG"
+                    },
+                    "freeLuggage": {
+                      "ADULT": {
+                        "nil": true
+                      }
+                    },
+                    "paidLuggage": {}
+                  },
+                  "airline": {
+                    "uid": "AF",
+                    "caption": "Эйр Франс",
+                    "airlineCode": "AF"
+                  },
+                  "starting": true,
+                  "arrivalAirport": {
+                    "uid": "CDG",
+                    "caption": "Шарль-де-Голль"
+                  }
+                }
+              ]
+            }
+          ],
+          "airlineAlliance": {
+            "uid": "*S",
+            "caption": "Skyteam"
+          },
+          "exchange": {
+            "ADULT": {
+              "exchangeableBeforeDeparture": true,
+              "exchangeAfterDeparture": {
+                "amount": "0",
+                "currency": "руб.",
+                "currencyCode": "RUB"
+              },
+              "exchangeBeforeDeparture": {
+                "amount": "0",
+                "currency": "руб.",
+                "currencyCode": "RUB"
+              },
+              "exchangeableAfterDeparture": true
+            }
+          },
+          "isTripartiteContractDiscountApplied": false,
+          "international": false,
+          "seats": [
+            {
+              "count": 1,
+              "type": {
+                "uid": "ADULT",
+                "caption": "Взрослый"
+              }
+            }
+          ],
+          "refund": {
+            "ADULT": {
+              "refundableBeforeDeparture": false,
+              "refundableAfterDeparture": false
+            }
+          }
+        },
+        "flightToken": "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\nhgnWjy5B+X8641P4G3cAAA=="
+      },
+      {
+        "hasExtendedFare": false,
+        "flight": {
+          "carrier": {
             "uid": "AZ",
             "caption": "Алиталия Экспресс",
             "airlineCode": "AZ"

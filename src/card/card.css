@@ -8,7 +8,7 @@
   background-color: white;
   margin: 18px 0 0 0;
   color:#263540;
-  border: 1px solid #e6e6e6;
+  /* border: 1px solid #e6e6e6; */
 }
 
 .headerCard {
@@ -40,9 +40,9 @@
   border-bottom: 1px solid #e6e6e6;
   height: 41px;
   display: flex;
-  /* margin: 13px auto; */
   align-items: center;
-  padding: 0 13px;
+  padding: 12px 13px;
+  box-sizing: border-box;
 }
 
 
@@ -50,14 +50,30 @@
   /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
-  /* padding: 10px 20px; */
-  height: auto;
-  flex-grow: 1;
+  align-items: center;
+  padding: 12px 35px 12px 18px;
+  height: 35px;
+  box-sizing: border-box;
+  /* font-size: 18px; */
 }
 
 .carrierName {
   /* border: 1px solid black; */
-  height: 35px;
+  height: auto;
+    flex-grow: 1;
+    padding: 0 18px;
+    position: relative;
+}
+
+.carrierNameText {
+  position: absolute;
+  bottom: 12px;
+}
+
+.travelDuration {
+  /* align-self: flex-end; */
+  position: relative;
+  top: 4px;
 }
 
 .selectButton {
@@ -67,4 +83,17 @@
   cursor: pointer;
   background-color: #F61C19;
   color: #fff;
+}
+
+.price {
+  font-size: 22px;
+  box-sizing: border-box;
+}
+
+.departureHours {
+  font-size: 18px;
+}
+
+.departureDay {
+  font-size: 14px;
 }

@@ -65,7 +65,7 @@ const Card = (props) => {
       <div className="routePanel">
         <div className="innerRoutePanel">
           <div className="cityName">
-            <span>{segments[0].departureCity.caption}</span>
+            <span>{segments[0].departureCity.caption}, </span>
           </div>
           <div className="airportName">
             <span>{segments[0].departureAirport.caption}</span>
@@ -74,7 +74,7 @@ const Card = (props) => {
             <span>({segments[0].departureAirport.uid})</span>
           </div>
           <div className="cityName">
-            <span>{segments[segments.length - 1].arrivalCity.caption}</span>
+            <span>{segments[segments.length - 1].arrivalCity.caption}, </span>
           </div>
           <div className="airportName">
             <span>{segments[segments.length - 1].arrivalAirport.caption}</span>
@@ -86,24 +86,26 @@ const Card = (props) => {
       </div>
       <div className="datePanel">
         <div className="departureDate">
-          <span>
+          <span className="departureHours">
             {departureDate.hours}:{departureDate.minutes}
           </span>{' '}
-          <span>
+          <span className="departureDay">
             {departureDate.dateFlight} {departureDate.month} {departureDate.day}
           </span>
         </div>
         <div className="travelDuration">{transferDuration(duration)}</div>
         <div className="departureDate">
-          <span>
+          <span className="departureDay">
             {arrivalDate.dateFlight} {arrivalDate.month} {arrivalDate.day}
           </span>{' '}
-          <span>
+          <span className="departureHours">
             {arrivalDate.hours}:{arrivalDate.minutes}
           </span>
         </div>
       </div>
-      <div className="carrierName">Рейс выполняет: {carrierName}</div>
+      <div className="carrierName">
+        <span className="carrierNameText">Рейс выполняет: {carrierName}</span>
+      </div>
       <button type="button" className="selectButton">
         ВЫБРАТЬ
       </button>
