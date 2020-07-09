@@ -1,6 +1,4 @@
 .containerCard {
-
-  /* margin: 20px 10px; */
   width: 635px;
   height: 224px;
   display: flex;
@@ -8,7 +6,6 @@
   background-color: white;
   margin: 18px 0 0 0;
   color:#263540;
-  /* border: 1px solid #e6e6e6; */
 }
 
 .headerCard {
@@ -47,18 +44,15 @@
 
 
 .datePanel {
-  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 35px 12px 18px;
   height: 35px;
   box-sizing: border-box;
-  /* font-size: 18px; */
 }
 
 .carrierName {
-  /* border: 1px solid black; */
   height: auto;
     flex-grow: 1;
     padding: 0 18px;
@@ -71,7 +65,6 @@
 }
 
 .travelDuration {
-  /* align-self: flex-end; */
   position: relative;
   top: 4px;
 }

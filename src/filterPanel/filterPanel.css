@@ -1,5 +1,4 @@
 .filterSortPanel {
-  /* border: 1px solid black; */
   padding: 0 10px;
   margin: 36px 0;
   font-size: 14px;
@@ -7,7 +6,6 @@
   height: 323px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
   box-sizing: border-box;
   background-color: white;
 }
@@ -23,7 +21,6 @@
 .sortPanel {
   display: flex;
   flex-direction: column;
-  /* margin: 10px 0; */
 }
 .sortPanel p {
   margin: 20px 0;

@@ -57,10 +57,6 @@ const FilterPanel = () => {
 
   return (
     <div className="filterSortPanel">
-      {/* <div className="inputGroup">
-        <input onChange={inputHandler} id="login" placeholder=" " />
-        <label htmlFor="login">login</label>
-      </div> */}
 
       <div className="sortPanel">
 

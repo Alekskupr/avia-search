@@ -9,26 +9,19 @@ p {
 
 .mainContainer {
   width: 963px;
-  /* height: 100vh; */
   margin: 0 auto;
   display: flex;
-  /* display: grid;
-  grid-template-columns: 1fr 3fr; */
 }
  
 .filterContainer {
   background-color: #d8d8d8;
-  /* border: 1px solid black; */
   width: 254px;
   height: auto;
 }
 
 .tripContainer {
-  /* background-color: green; */
-  /* flex-grow: 10; */
   width: 706px;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
   padding: 0px 28px;
 }
